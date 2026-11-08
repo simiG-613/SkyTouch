@@ -253,6 +253,8 @@ main > section > h2:first-child::before {
 .cards {
   display: flex;
   flex-wrap: wrap;
+  
+  
   gap: var(--gap);
 }
 

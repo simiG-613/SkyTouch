@@ -79,7 +79,7 @@ textarea:focus {
 }
 
 
- input:not([type="date"]):not(:placeholder-shown):valid,
+ /* input:not([type="date"]):not(:placeholder-shown):valid,
 textarea:not(:placeholder-shown):valid {
   border-color: var(--good);
 }
@@ -90,6 +90,19 @@ textarea:not(:placeholder-shown):invalid {
 }
 
 input:not([type="date"]):not(:placeholder-shown):invalid:focus {
+  box-shadow: 0 0 0 3px rgba(255, 143, 143, 0.3);
+} */
+ input:is([type="text"], [type="email"], [type="tel"], [type="number"]):not(:placeholder-shown):valid,
+textarea:not(:placeholder-shown):valid {
+  border-color: var(--good);
+}
+ 
+input:is([type="text"], [type="email"], [type="tel"], [type="number"]):not(:placeholder-shown):invalid,
+textarea:not(:placeholder-shown):invalid {
+  border-color: var(--bad);
+}
+ 
+input:is([type="text"], [type="email"], [type="tel"], [type="number"]):not(:placeholder-shown):invalid:focus {
   box-shadow: 0 0 0 3px rgba(255, 143, 143, 0.3);
 }
 
