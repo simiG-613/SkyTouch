@@ -1,0 +1,181 @@
+/* ==========================================================
+   about.css - עיצוב ייחודי לדף האודות בלבד
+   ========================================================== */
+
+/* סיפור + תמונה זה לצד זה */
+.story {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.story-text {
+  flex: 1 1 50%;
+}
+
+.story figure {
+  flex: 1 1 35%;
+  min-width: 240px;
+  margin: 0;
+  text-align:center;
+}
+
+.story figure img {
+  border-radius: var(--radius);
+  border: 1px solid var(--glass-border);
+}
+
+figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* רשימה עם כוכבים */
+.perks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.perks li {
+  flex: 1 1 40%;
+  padding-right: 1.6rem;
+  position: relative;
+}
+
+.perks li::before {
+  content: "\2726";
+  position: absolute;
+  right: 0;
+  color: var(--gold);
+}
+
+/* רשימה ממוספרת כציר זמן */
+.timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  border-right: 2px solid var(--glass-border);
+}
+
+.timeline li {
+  /* position: relative; */
+  padding: 0 2.6rem 1.2rem 0;
+ 
+}
+
+.timeline li::before {
+
+  position: absolute;
+  top: 0;
+  right: -1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  font-weight: 800;
+  color: #1b1b2f;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+.timeline li:last-child {
+  padding-bottom: 0;
+}
+
+.timeline li:last-child::before {
+  background: var(--sky);
+}
+
+וידאו + הורדה
+.media-row {
+  display: flex;
+  flex-wrap: wrap;
+   align-items: first baseline; 
+   gap: var(--gap); 
+}
+
+.video-box {
+  flex: 2 1 55%;
+  margin: 0;
+}
+
+.video-box video {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--glass-border);
+  background: #000;
+}
+
+.download-box {
+  flex: 1 1 30%;
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  /* border: 1px dashed var(--gold); */
+  border-radius: var(--radius);
+}
+
+/* טבלת לוח הזמנים */
+.schedule {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.schedule caption {
+  padding-bottom: 0.6rem;
+  text-align: right;
+  color: var(--muted);
+}
+
+.schedule th,
+.schedule td {
+  padding: 0.7rem 1rem;
+  text-align: right;
+}
+
+.schedule thead th {
+  color: #1b1b2f;
+  background: var(--gold);
+}
+
+.schedule tbody tr:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.schedule tbody tr:hover {
+  background: rgba(125, 211, 252, 0.18);
+}
+
+.note {
+  margin: 1rem 0 0;
+  color: var(--muted);
+}
+
+@media (max-width: 700px) {
+  .story-text,
+  .story figure,
+  .video-box,
+  .download-box {
+    flex-basis: 100%;
+  }
+
+  .perks li {
+    flex-basis: 100%;
+  }
+
+  .schedule th,
+  .schedule td {
+    padding: 0.5rem 0.4rem;
+    font-size: 0.9rem;
+  }
+}

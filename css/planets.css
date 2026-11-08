@@ -1,0 +1,53 @@
+/* ==========================================================
+   planets.css - עיצוב ייחודי לדף כוכבי הלכת בלבד
+   ========================================================== */
+
+/* תג צבע שונה לכל קבוצה: פנימיים (סלעיים) מול חיצוניים (ענקים) */
+main > section:nth-of-type(2) .card h3::after {
+  content: "סלעי";
+  margin-right: 0.6rem;
+  padding: 0.1rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #3d1d0c;
+  background: #f0a47c;
+  border-radius: 999px;
+}
+
+main > section:nth-of-type(3) .card h3::after {
+  content: "ענק";
+  margin-right: 0.6rem;
+  padding: 0.1rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #0b2a44;
+  background: var(--sky);
+  border-radius: 999px;
+}
+
+/* הדגשת צפייה בעין בלתי מזוינת */
+.card dd:last-of-type {
+  color: var(--good);
+}
+
+.card dd:last-of-type:lang(he) {
+  letter-spacing: 0.02em;
+}
+
+/* תמונות הכוכבים עגולות יותר בדף הזה */
+.card img[alt*="איור"] {
+  border-radius: 50% 50% 14px 14px;
+}
+
+@media (max-width: 700px) {
+  .card {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .card dt,
+  .card dd {
+    flex-basis: 50%;
+  }
+}

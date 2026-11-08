@@ -1,0 +1,435 @@
+/* ==========================================================
+   Skytouch - style.css  (העיצוב המשותף לכל דפי האתר)
+   נושאים ללמידה עצמית:
+   1) משתני CSS (Custom Properties) - ראו :root
+   2) backdrop-filter - אפקט זכוכית מטושטשת (header, nav, כרטיסים)
+   ========================================================== */
+
+/* ---------- משתנים ---------- */
+:root {
+  --bg: #0b1026;
+  --bg-soft: #141b3d;
+  --glass: rgba(255, 255, 255, 0.07);
+  --glass-border: rgba(255, 255, 255, 0.16);
+  --text: #e9edff;
+  --muted: #a9b3da;
+  --gold: #f5c76b;
+  --sky: #7dd3fc;
+  --bad: #ff8f8f;
+  --good: #7ee0a8;
+  --radius: 16px;
+  --gap: 1.5rem;
+}
+
+/* ---------- איפוס ובסיס ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Heebo", Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text);
+  background: radial-gradient(ellipse at top, #1b2456 0%, transparent 60%) no-repeat;
+}
+
+/* כוכבים מנצנצים ברקע (אנימציה) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 22%, #fff, transparent),
+    radial-gradient(1px 1px at 34% 70%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 58% 36%, #cfe4ff, transparent),
+    radial-gradient(1px 1px at 76% 82%, #fff, transparent),
+    radial-gradient(2px 2px at 90% 14%, #fff6d6, transparent),
+    radial-gradient(1px 1px at 45% 10%, #fff, transparent);
+  background-size: 320px 320px;
+ 
+}
+
+
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--sky);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+/* ---------- כותרות ---------- */
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  margin: 0 0 0.6em;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--gold), var(--sky));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+h2 {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  color: var(--gold);
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+/* ---------- header ---------- */
+.site-header {
+  position: sticky;
+  top: 0; 
+
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 4%;
+  background: rgba(11, 16, 38, 0.6);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.logo img {
+  width: 48px;
+  height: 48px;
+}
+
+.logo:hover {
+  color: var(--gold);
+}
+
+.tagline {
+  margin: 0;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- פריסת העמוד: aside + main ---------- */
+.layout {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap);
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--gap) 4%;
+}
+
+aside {
+  flex: 0 0 19%;
+  min-width: 170px;
+  position: sticky;
+  top: 6rem;
+}
+
+aside nav {
+  padding: 1rem;
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+}
+
+aside nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+aside nav a {
+  display: block;
+  padding: 0.55rem 0.9rem;
+  border-radius: 10px;
+  color: var(--text);
+  transition: background 0.25s, transform 0.25s;
+}
+
+aside nav a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateX(-4px);
+}
+
+a[aria-current="page"] {
+  background: linear-gradient(90deg, var(--gold), #ffdf9e);
+  color: #1b1b2f;
+  font-weight: 600;
+}
+
+a[aria-current="page"]:hover {
+  color: #1b1b2f;
+}
+
+/* ---------- main ---------- */
+main {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+main > section {
+  padding: 2rem 4%;
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+}
+
+main > section > h2:first-child {
+  position: relative;
+  padding-right: 1.4rem;
+}
+
+main > section > h2:first-child::before {
+  content: "\2726";
+  position: absolute;
+  right: 0;
+  color: var(--sky);
+}
+
+/* ---------- כרטיסי מוצרים (משותף לדפי כוכבי הלכת וגרמי השמיים) ---------- */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+
+.card {
+  flex: 1 1 28%;
+  min-width: 230px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  animation: float 6s ease-in-out infinite;
+}
+
+ 
+
+.card h3 {
+  margin: 0;
+  color: var(--gold);
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.card dl {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.card dt {
+  flex: 0 0 48%;
+  color: var(--muted);
+}
+
+.card dd {
+  flex: 0 0 52%;
+  margin: 0;
+  font-weight: 600;
+}
+
+.card dt:nth-of-type(odd),
+.card dt:nth-of-type(odd) + dd {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.card a:last-child {
+  margin-top: auto;
+}
+
+/* ---------- כפתורים ---------- */
+.btn,
+button,
+input[type="submit"] {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  font: inherit;
+  font-weight: 600;
+  color: #1b1b2f;
+  background: linear-gradient(90deg, var(--gold), #ffdf9e);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.btn:hover,
+button:hover {
+  color: #1b1b2f;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(245, 199, 107, 0.35);
+}
+
+button[type="reset"] {
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--glass-border);
+}
+
+button[type="reset"]:hover {
+  color: var(--text);
+  box-shadow: none;
+  border-color: var(--gold);
+}
+
+/* ---------- footer ---------- */
+footer {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem 1.5rem;
+  padding: 1.1rem 4%;
+  color: var(--muted);
+  background: rgba(11, 16, 38, 0.6);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--glass-border);
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ---------- רספונסיבי ---------- */
+@media (max-width: 900px) {
+  .layout {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  aside {
+    position: static;
+    flex: none;
+    width: 100%;
+  }
+
+  aside nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  aside nav li {
+    flex: 1 1 30%;
+  }
+
+  aside nav a { 
+    text-align: center;
+  }
+
+  aside nav a:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 520px) {
+  body {
+    font-size: 1rem;
+  }
+
+  .tagline {
+    display: none;
+  }
+
+  .site-header {
+    justify-content: center;
+  }
+
+  main > section {
+    padding: 1.3rem 5%;
+  }
+
+  footer {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+

@@ -1,0 +1,179 @@
+/* ==========================================================
+   home.css - עיצוב ייחודי לדף הבית בלבד (תבנית שונה: ללא תפריט צד)
+   נושא נוסף ללמידה עצמית: clip-path (חיתוך צורת ה-hero)
+   ========================================================== */
+
+/* תפריט אופקי בתוך ה-header */
+.home .site-header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home .site-header nav a {
+  display: block;
+  padding: 0.45rem 1rem;
+  color: var(--text);
+  border-radius: 999px;
+  transition: background 0.25s;
+}
+
+.home .site-header nav a:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* main של דף הבית רחב ומרוכז */
+.home main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--gap) 4%;
+}
+
+/* ---------- hero ---------- */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--gap);
+  padding-bottom: 4rem;
+  
+  background: linear-gradient(135deg, rgba(125, 211, 252, 0.12), rgba(245, 199, 107, 0.1));
+}
+
+.hero-text {
+  flex: 1 1 45%;
+}
+
+.eyebrow {
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.15em;
+  color: var(--sky);
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 7vw, 4.4rem);
+  direction: ltr;
+  text-align: right;
+}
+
+.hero img {
+  flex: 1 1 40%;
+  min-width: 260px;
+  border-radius: var(--radius);
+ 
+}
+/* ---------- פס סטטיסטיקות ---------- */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.stats li {
+  flex: 1 1 20%;
+  min-width: 130px;
+  padding: 1rem 0.5rem;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.stats strong {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--gold);
+}
+
+.stats li:nth-child(even) strong {
+  color: var(--sky);
+}
+
+.stats span {
+  color: var(--muted);
+}
+
+/* ---------- כרטיסי כניסה ---------- */
+.entry-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+
+.entry-cards .card {
+  flex: 1 1 28%;
+  min-width: 230px;
+}
+
+.entry-cards .card img {
+  aspect-ratio: 16 / 10;
+}
+
+/* ---------- רשימת מה רואים ---------- */
+.sky-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sky-list li {
+  position: relative;
+  padding: 0.5rem 2rem 0.5rem 0.5rem;
+  border-radius: 10px;
+  transition: background 0.25s;
+}
+
+.sky-list li::before {
+  content: "\2605";
+  position: absolute;
+  top: 0.45rem;
+  right: 0.5rem;
+  color: var(--gold);
+}
+
+.sky-list li:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+@media (max-width: 900px) {
+  .hero {
+   
+    padding-bottom: 2rem;
+  }
+
+  .hero h1 {
+    text-align: center;
+  }
+
+  .hero-text {
+    flex-basis: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .home .site-header nav ul {
+    justify-content: center;
+  }
+
+  .stats li {
+    flex-basis: 40%;
+  }
+
+  .entry-cards .card {
+    flex-basis: 100%;
+  }
+}

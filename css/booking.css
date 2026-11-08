@@ -1,0 +1,176 @@
+/* ==========================================================
+   booking.css - עיצוב ייחודי לטופס ההרשמה בלבד
+   ========================================================== */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+fieldset {
+  margin: 0;
+  padding: 1.2rem 1.4rem 1.4rem;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+legend {
+  padding: 0 0.6rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.row + .row {
+  margin-top: 1rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1 1 40%;
+  min-width: 200px;
+}
+
+label > span:first-child {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* שדות הקלט */
+input:not([type="radio"], [type="checkbox"], [type="range"]),
+select,
+textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  font: inherit;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+}
+
+select option,
+select optgroup {
+  color: #1b1b2f;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(169, 179, 218, 0.6);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.14);
+  border-color: var(--sky);
+  box-shadow: 0 0 0 3px rgba(125, 211, 252, 0.25);
+}
+
+
+ input:not([type="date"]):not(:placeholder-shown):valid,
+textarea:not(:placeholder-shown):valid {
+  border-color: var(--good);
+}
+
+input:not([type="date"]):not(:placeholder-shown):invalid,
+textarea:not(:placeholder-shown):invalid {
+  border-color: var(--bad);
+}
+
+input:not([type="date"]):not(:placeholder-shown):invalid:focus {
+  box-shadow: 0 0 0 3px rgba(255, 143, 143, 0.3);
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* רדיו ותיבות סימון */
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.4rem;
+}
+
+.choices label,
+.agree {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.6rem;
+  flex: 0 1 auto;
+  min-width: 0;
+  cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--gold);
+}
+
+
+
+.agree {
+  margin-top: 1rem;
+}
+
+.agree span {
+  font-size: 0.95rem;
+}
+
+/* רמת ניסיון */
+.range-label {
+  margin-top: 1.2rem;
+  flex: none;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--gold);
+}
+
+.range-ends {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* כפתורים */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.buttons button {
+  min-width: 140px;
+}
+
+@media (max-width: 700px) {
+  .row > label {
+    flex-basis: 100%;
+  }
+
+  .buttons button {
+    flex: 1 1 100%;
+  }
+
+  fieldset {
+    padding: 1rem;
+  }
+}

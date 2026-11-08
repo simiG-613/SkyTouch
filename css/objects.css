@@ -1,0 +1,51 @@
+/* ==========================================================
+   objects.css - עיצוב ייחודי לדף גרמי השמיים בלבד
+   כולל מפת תמונה (image map) לחיצה
+   ========================================================== */
+
+/* עטיפת מפת התמונה: גלילה אופקית במסכים קטנים כדי שהאזורים הלחיצים יישארו מדויקים */
+.map-wrap {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  padding: 0.5rem;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.map-wrap img {
+  flex: none;
+  width: 640px;
+  height: 360px;
+  border-radius: 12px;
+}
+
+/* תג צבע לפי סוג הגרם */
+.card dd:first-of-type::before {
+  content: "\2605";
+  margin-left: 0.4rem;
+  color: var(--gold);
+}
+
+.card dt:nth-of-type(2) + dd {
+  color: var(--sky);
+}
+
+
+/* בכרטיסים כאן התמונה רחבה יותר (יחס 4:3 כבר מוגדר ב-style.css) */
+.card img {
+  aspect-ratio: 4 / 3;
+}
+
+@media (max-width: 900px) {
+  .map-wrap {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 700px) {
+  .card {
+    flex-basis: 100%;
+  }
+}

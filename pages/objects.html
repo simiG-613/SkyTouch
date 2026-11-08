@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="קבוצות כוכבים, צבירים, ערפיליות וגלקסיות - מה לחפש בשמיים ומתי">
+  <title>גרמי שמיים | Skytouch</title>
+  <link rel="icon" href="../favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/objects.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="../index.html">
+      <img src="../assets/images/logo.svg" alt="לוגו Skytouch" width="48" height="48">
+      <span>Skytouch</span>
+    </a>
+    <p class="tagline">Touch the Sky</p>
+  </header>
+
+  <div class="layout">
+    <aside>
+      <nav aria-label="תפריט ראשי">
+        <ul>
+          <li><a href="../index.html">בית</a></li>
+          <li><a href="planets.html">כוכבי לכת</a></li>
+          <li><a href="objects.html" aria-current="page">גרמי שמיים</a></li>
+          <li><a href="about.html">אודות</a></li>
+          <li><a href="booking.html">הרשמה לתצפית</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <section>
+        <h1>גרמי שמיים</h1>
+        <p>קבוצות כוכבים, צבירים, ערפיליות וגלקסיות. לחצי על אזור במפת השמיים כדי לקפוץ אל הכרטיס שלו.</p>
+
+        <div class="map-wrap">
+          <img src="../assets/images/sky-map.svg" alt="מפת שמיים עם ארבע קבוצות כוכבים לחיצות" width="640" height="360" usemap="#skymap">
+        </div>
+        <map name="skymap">
+          <area shape="circle" coords="130,215,70" href="#orion" alt="כסיל">
+          <area shape="circle" coords="470,110,85" href="#big-dipper" alt="הדובה הגדולה">
+          <area shape="circle" coords="330,85,48" href="#pleiades" alt="כימה">
+          <area shape="circle" coords="545,270,62" href="#cassiopeia" alt="קסיופיאה">
+        </map>
+      </section>
+
+      <section>
+        <h2>קבוצות כוכבים</h2>
+        <div class="cards">
+          <article class="card" id="orion">
+            <img src="../assets/images/objects/orion.svg" alt="איור של קבוצת הכוכבים כסיל" width="400" height="300">
+            <h3>כסיל</h3>
+            <p>קל לזיהוי בזכות שלושת כוכבי החגורה שלו הנמצאים בשורה אחת.</p>
+            <dl>
+              <dt>סוג</dt><dd>קבוצת כוכבים</dd>
+              <dt>עונה מומלצת</dt><dd>חורף</dd>
+              <dt>צפייה</dt><dd>בעין</dd>
+            </dl>
+            <a class="btn" href="booking.html">להרשמה</a>
+          </article>
+
+          <article class="card" id="big-dipper">
+            <img src="../assets/images/objects/big-dipper.svg" alt="איור של קבוצת הכוכבים הדובה הגדולה" width="400" height="300">
+            <h3>הדובה הגדולה</h3>
+            <p>שבעה כוכבים בצורת מחבט. שני הכוכבים בקצה הקערה מכוונים אל כוכב הצפון.</p>
+            <dl>
+              <dt>סוג</dt><dd>קבוצת כוכבים</dd>
+              <dt>עונה מומלצת</dt><dd>אביב</dd>
+              <dt>צפייה</dt><dd>בעין</dd>
+            </dl>
+            <a class="btn" href="booking.html">להרשמה</a>
+          </article>
+
+          <article class="card" id="cassiopeia">
+            <img src="../assets/images/objects/cassiopeia.svg" alt="איור של קבוצת הכוכבים קסיופיאה" width="400" height="300">
+            <h3>קסיופיאה</h3>
+            <p>חמישה כוכבים שמרכיבים את האות W, שקל למצוא בשמי הצפון.</p>
+            <dl>
+              <dt>סוג</dt><dd>קבוצת כוכבים</dd>
+              <dt>עונה מומלצת</dt><dd>סתיו</dd>
+              <dt>צפייה</dt><dd>בעין</dd>
+            </dl>
+            <a class="btn" href="booking.html">להרשמה</a>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>צבירים, ערפיליות וגלקסיות</h2>
+        <div class="cards">
+          <article class="card" id="pleiades">
+            <img src="../assets/images/objects/pleiades.svg" alt="איור של צביר הכוכבים כימה" width="400" height="300">
+            <h3>כימה</h3>
+            <p>צביר כוכבים כחלחל. בעין רואים כמה כוכבים, ובמשקפת עשרות.</p>
+            <dl>
+              <dt>סוג</dt><dd>צביר פתוח</dd>
+              <dt>עונה מומלצת</dt><dd>סתיו וחורף</dd>
+              <dt>צפייה</dt><dd>בעין / במשקפת</dd>
+            </dl>
+            <a class="btn" href="booking.html">להרשמה</a>
+          </article>
+
+          <article class="card">
+            <img src="../assets/images/objects/andromeda.svg" alt="איור של גלקסיית אנדרומדה" width="400" height="300">
+            <h3>גלקסיית אנדרומדה</h3>
+            <p>אחד העצמים הרחוקים ביותר שאפשר לראות בעין בלתי מזוינת, כתם אור אליפטי קלוש.</p>
+            <dl>
+              <dt>סוג</dt><dd>גלקסיה</dd>
+              <dt>עונה מומלצת</dt><dd>סתיו</dd>
+              <dt>צפייה</dt><dd>בשמיים חשוכים</dd>
+            </dl>
+            <a class="btn" href="booking.html">להרשמה</a>
+          </article>
+
+          <article class="card">
+            <img src="../assets/images/objects/orion-nebula.svg" alt="איור של ערפילית כסיל" width="400" height="300">
+            <h3>ערפילית כסיל</h3>
+            <p>ענן גז צבעוני שנמצא בחרב של כסיל. בטלסקופ היא נראית כפרפר זוהר.</p>
+            <dl>
+              <dt>סוג</dt><dd>ערפילית</dd>
+              <dt>עונה מומלצת</dt><dd>חורף</dd>
+              <dt>צפייה</dt><dd>בטלסקופ</dd>
+            </dl>
+            <a class="btn" href="booking.html">להרשמה</a>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Skytouch - כל הזכויות שמורות</p>
+    <a href="about.html">אודות המצפה</a>
+  </footer>
+
+</body>
+</html>

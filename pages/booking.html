@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="הרשמה ללילה תצפית במצפה Skytouch">
+  <title>הרשמה לתצפית | Skytouch</title>
+  <link rel="icon" href="../favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/booking.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="../index.html">
+      <img src="../assets/images/logo.svg" alt="לוגו Skytouch" width="48" height="48">
+      <span>Skytouch</span>
+    </a>
+    <p class="tagline">Touch the Sky</p>
+  </header>
+
+  <div class="layout">
+    <aside>
+      <nav aria-label="תפריט ראשי">
+        <ul>
+          <li><a href="../index.html">בית</a></li>
+          <li><a href="planets.html">כוכבי לכת</a></li>
+          <li><a href="objects.html">גרמי שמיים</a></li>
+          <li><a href="about.html">אודות</a></li>
+          <li><a href="booking.html" aria-current="page">הרשמה לתצפית</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <section>
+        <h1>הרשמה ללילה תצפית</h1>
+        <p>ממלאים את הפרטים, בוחרים תאריך ומגיעים להרים את הראש. שדות המסומנים בכוכבית הם חובה.</p>
+
+        <form action="thanks.html" method="get">
+
+          <fieldset>
+            <legend>פרטים אישיים</legend>
+            <div class="row">
+              <label>
+                <span>שם מלא *</span>
+                <input type="text" name="fullname" placeholder="לדוגמה: ישראל ישראלי" required minlength="2" maxlength="40" autocomplete="name">
+              </label>
+              <label>
+                <span>אימייל *</span>
+                <input type="email" name="email" placeholder="name@example.com" required autocomplete="email">
+              </label>
+            </div>
+            <div class="row">
+              <label>
+                <span>טלפון *</span>
+                <input type="tel" name="phone" placeholder="050-1234567" required pattern="0[0-9]{1,2}-?[0-9]{7}" title="מספר טלפון ישראלי, לדוגמה 050-1234567" autocomplete="tel">
+              </label>
+              <label>
+                <span>מספר משתתפים *</span>
+                <input type="number" name="people" placeholder="1-12" min="1" max="12" required>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>מתי ואיפה</legend>
+            <div class="row">
+              <label>
+                <span>תאריך *</span>
+                <input type="date" name="date" min="2026-11-01" max="2027-12-31" required>
+              </label>
+              <label>
+                <span>שעה מועדפת</span>
+                <input type="time" name="time" min="19:00" max="23:00" value="19:00">
+              </label>
+            </div>
+            <div class="row">
+              <label>
+                <span>יעד תצפית</span>
+                <input type="text" name="place" list="places" placeholder="בחירה מהרשימה או הקלדה">
+                <datalist id="places">
+                  <option value="גג המצפה">
+                  <option value="שדה פתוח מחוץ לעיר">
+                  <option value="חניון לילה בהר">
+                </datalist>
+              </label>
+              <label>
+                <span>סוג טלסקופ</span>
+                <select name="scope">
+                  <optgroup label="לפי גודל">
+                    <option value="small">קטן - קל לנשיאה</option>
+                    <option value="medium" selected>בינוני</option>
+                    <option value="large">גדול - הטלסקופ הראשי</option>
+                  </optgroup>
+                  <optgroup label="אחר">
+                    <option value="none">בלי טלסקופ, רק עין</option>
+                  </optgroup>
+                </select>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>סוג התצפית *</legend>
+            <div class="choices">
+              <label><input type="radio" name="kind" value="telescope" required> תצפית בטלסקופ</label>
+              <label><input type="radio" name="kind" value="eye"> עין בלתי מזוינת</label>
+              <label><input type="radio" name="kind" value="photo"> צילום שמיים</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>מה מעניין אותך?</legend>
+            <div class="choices">
+              <label><input type="checkbox" name="interest" value="planets"> כוכבי לכת</label>
+              <label><input type="checkbox" name="interest" value="constellations"> קבוצות כוכבים</label>
+              <label><input type="checkbox" name="interest" value="galaxies"> גלקסיות</label>
+              <label><input type="checkbox" name="interest" value="moon"> הירח</label>
+            </div>
+
+            <label class="range-label">
+              <span>רמת ניסיון</span>
+              <input type="range" name="level" min="1" max="5" step="1" value="1" list="levels">
+              <datalist id="levels">
+                <option value="1" label="מתחיל">
+                <option value="3" label="בינוני">
+                <option value="5" label="מנוסה">
+              </datalist>
+              <span class="range-ends"><span>מתחיל</span><span>בינוני</span><span>מנוסה</span></span>
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>הערות</legend>
+            <label>
+              <span>משהו שחשוב שנדע?</span>
+              <textarea name="notes" rows="4" maxlength="300" placeholder="לדוגמה: ילדים בני 6, או בקשה מיוחדת"></textarea>
+            </label>
+            <label class="agree">
+              <input type="checkbox" name="agree" value="yes" required >
+              <span>אני מאשר/ת קבלת עדכונים על מועד התצפית *</span>
+            </label>
+          </fieldset>
+
+          <div class="buttons">
+            <button type="reset">איפוס</button>
+            <button type="submit">שליחה</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Skytouch - כל הזכויות שמורות</p>
+    <a href="about.html">אודות המצפה</a>
+  </footer>
+
+</body>
+</html>
